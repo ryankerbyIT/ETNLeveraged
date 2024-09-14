@@ -1,3 +1,131 @@
+# -------------------------------------------------------------
+# Investment Backtest Tool: Comprehensive Documentation
+# -------------------------------------------------------------
+
+# 1. Overview
+# The Investment Backtest Tool is a Python-based GUI application 
+# that allows users to backtest the performance of stock investments 
+# over time. It uses yfinance to fetch historical stock data, 
+# calculates the investment value based on a user-defined start 
+# and end date (2009 to 2024), and visualizes the stock performance 
+# using mplfinance. The tool allows users to input a stock ticker 
+# and displays the results in an interactive GUI.
+
+# Key Features:
+# - Input any valid ticker symbol to backtest stock performance.
+# - Visualize stock price performance in a line chart.
+# - Calculate the value of an initial investment of $10,000.
+# - Zoom text in the result box with a dynamic slider.
+# - Draggable result text box for flexibility.
+# - Error handling for invalid or empty stock data.
+
+# -------------------------------------------------------------
+
+# 2. Application Structure
+
+# 2.1 Libraries Used
+# - pandas: For data handling and resampling.
+# - yfinance: To fetch historical stock data.
+# - mplfinance: To plot stock performance.
+# - tkinter: For creating the graphical user interface (GUI).
+# - matplotlib: To render charts inside tkinter.
+# - simpledialog: For input dialog box.
+
+# 2.2 Main Components
+
+# 2.2.1 Data Fetching and Investment Calculation
+# The fetch_data function retrieves the historical stock data using 
+# the ticker symbol, start date, and end date. The 
+# calculate_investment function computes the investment value 
+# over time by assuming an initial investment of $10,000.
+
+# 2.2.2 Graph Plotting
+# The display_chart function plots the stock data using mplfinance. 
+# It resamples the data into weekly intervals and displays the chart 
+# showing the investment value over time.
+
+# 2.2.3 User Input and Results Display
+# The get_ticker_symbol function opens a dialog where users input 
+# a stock ticker symbol. The display_results function shows the 
+# investment details (ticker, buy price, final value) in the result 
+# box.
+
+# 2.2.4 Text Scaling
+# The zoom_text function allows users to dynamically adjust the 
+# text size in the results display using a slider.
+
+# 2.3 GUI Components
+# - Chart Frame: Displays the stock price chart.
+# - ScrolledText Widget: Shows investment calculation results.
+# - Zoom Slider: Allows dynamic text size adjustment.
+# - Buttons: To backtest a stock or exit the application.
+
+# -------------------------------------------------------------
+
+# 3. How to Use the Application
+
+# 1. Running the Application:
+# - Run the Python script in an environment with the required libraries.
+
+# 2. Entering a Ticker Symbol:
+# - Click the "Backtest Stock" button and input a valid stock ticker 
+#   symbol (e.g., "AAPL" for Apple, "GOOGL" for Alphabet).
+
+# 3. Viewing Results:
+# - The tool fetches historical data and calculates:
+#   - Initial investment: $10,000
+#   - Buy price (first closing price)
+#   - Final investment value (based on final closing price)
+#   - A line chart is displayed showing weekly stock performance.
+
+# 4. Adjusting Text Size:
+# - Use the "Text Zoom" slider to adjust the font size of the 
+#   displayed results.
+
+# 5. Exiting the Application:
+# - Click the "Exit" button to close the program.
+
+# -------------------------------------------------------------
+
+# 4. Future Feature Expansion Plans
+
+# 4.1 Additional Metrics and Indicators
+# - Add Moving Averages (MA) and other technical indicators like 
+#   RSI, Bollinger Bands, and MACD to provide more insights.
+
+# 4.2 Custom Date Range Selection
+# - Allow users to input custom start and end dates for backtesting 
+#   flexibility.
+
+# 4.3 Compare Multiple Stocks
+# - Provide support for comparing multiple stocks on the same chart 
+#   and analyzing portfolio performance.
+
+# 4.4 Export Results
+# - Add options to export the backtested data to CSV files or 
+#   generate PDFs of the charts and results.
+
+# 4.5 Real-Time Data Integration
+# - Implement real-time stock price fetching and update the chart 
+#   dynamically with live data.
+
+# 4.6 Graphical Enhancements
+# - Add more interactive charts (zoom, pan, hover for details) and 
+#   customizable themes and colors.
+
+# 4.7 Risk Analysis Tools
+# - Implement risk analysis features like Value at Risk (VaR) and 
+#   the Sharpe Ratio to evaluate risk-adjusted returns.
+
+# -------------------------------------------------------------
+
+# 5. Conclusion
+# The Investment Backtest Tool provides a simple and intuitive 
+# interface for stock performance analysis over time. With planned 
+# future updates, it can become a comprehensive tool for financial 
+# analysis, offering more advanced features such as technical 
+# indicators, real-time data, and risk analysis.
+#-------------------------------------------------------------
 import pandas as pd
 import yfinance as yf
 import mplfinance as mpf
